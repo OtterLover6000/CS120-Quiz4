@@ -11,6 +11,15 @@ int triangleArea(double base, double height) {
     return (base * height) * 0.5;
 }
 
+void handleTriangleArea()
+{
+    cout << "Enter the base and height of your triangle..." << endl;
+    double base;
+    double height;
+    cin >> base >> height;
+    cout << "Area of your triangle is:" << endl;
+    cout << triangleArea(base, height) << endl;
+}
 
 int rectangleArea(double length, double width)
 {
@@ -45,12 +54,12 @@ void handleCircleArea()
 
 int main()
 {
-	cout << setprecision(2) << fixed;
     int type;
 
     cout << "Pick an option:\n1.Radius of a circle\n2.Rectangle Area\n3.Triangle Area\n4.End Program" << endl;
     cin >> type;
 
+	cout << setprecision(2) << fixed;
     switch (type)
     {
     case 1:
@@ -60,12 +69,16 @@ int main()
         handleRectangleArea();
         break;
     case 3:
-        
+        handleTriangleArea();
+        break;
+    case 4:
+        cout << "Programmed Stop" << endl;
         break;
     default:
-        break;
+        cout << "Wrong number" << endl;
+        return 0;
     }
 
 
-    return 0;
+    return 1;
 }
